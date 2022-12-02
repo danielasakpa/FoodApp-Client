@@ -2,7 +2,6 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://foodapp-backend.onrender.com",
   "dependencies": {
     "@emailjs/browser": "^3.9.0",
     "@emotion/react": "^11.10.4",
