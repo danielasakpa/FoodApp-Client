@@ -1,2 +1,2 @@
-/* https://foodapp-backend-production.up.railway.app/:splat 200
+//* https://foodapp-backend-production.up.railway.app/:splat 200
 /* /index.html 200     
