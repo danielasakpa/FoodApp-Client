@@ -2,6 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://foodapp-backend-production.up.railway.app/",
   "dependencies": {
     "@emailjs/browser": "^3.9.0",
     "@emotion/react": "^11.10.4",
@@ -48,6 +49,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "https://foodapp-backend.onrender.com/"
+  }
 }
