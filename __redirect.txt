@@ -1,2 +1,3 @@
-//* https://foodapp-backend-production.up.railway.app/:splat 200
+/auth/* https://foodapp-backend-production.up.railway.app/:splat 200
+/api/* https://foodapp-backend-production.up.railway.app/:splat 200
 /* /index.html 200     
