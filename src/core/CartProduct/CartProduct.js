@@ -3,7 +3,6 @@ import { Button } from "@mui/material";
 import { Wrapper } from "./CartProductStyle";
 import { CartContext } from "../../CartContext";
 import { getProductData } from "../../productsStore";
-import Meal from "../../Assets/images/Meals.jpg";
 
 const CartProduct = (props) => {
   const cart = useContext(CartContext);

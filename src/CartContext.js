@@ -10,7 +10,7 @@ export const CartContext = createContext({
   getTotalCost: () => {},
 });
 
-var count;
+let count;
 
 export function CartProvider({ children }) {
   const [cartProducts, setCartProducts] = useState([]);

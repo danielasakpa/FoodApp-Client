@@ -22,6 +22,8 @@ const Cart = () => {
     0
   );
 
+  console.log(`productsCount: ${productsCount}`);
+
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
