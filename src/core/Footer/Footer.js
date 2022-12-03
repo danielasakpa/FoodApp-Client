@@ -105,7 +105,7 @@ const Footer = () => {
         <Container maxWidth="xl">
           <Stack
             direction={{ xs: "column", md: "row" }}
-            alignItems="flex-end"
+            alignItems="flex-start"
             justifyContent="space-between"
             mt={6}
           >

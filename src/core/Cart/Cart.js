@@ -17,14 +17,10 @@ const Cart = () => {
     right: false,
   });
 
-  console.log(cart.items);
-
   const productsCount = cart.items.reduce(
     (sum, product) => sum + product.quantity,
     0
   );
-
-  console.log(`productsCount: ${productsCount}`);
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (

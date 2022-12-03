@@ -25,7 +25,6 @@ AOS.init({
 
 const useStyles = makeStyles((theme) => ({
   HowItWorks: {
-    backgroundColor: "#fffee6",
     padding: "20px",
   },
 }));

@@ -154,8 +154,8 @@ const Profile = withRouter(({ match, history }) => {
                   marginTop={6}
                   className={classes.Papers}
                 >
-                  <Paper p={3} elevation={3} square>s
-                    <Link to={"/menu"} style={{textDecoration: "none"}}>
+                  <Paper p={3} elevation={3} square>
+                    <Link to={"/menu"} style={{textDecoration: "none", color: "#000000"}}>
                       <Box textAlign="center" cursor="pointer" m={2}>
                         <img style={{ width: "50px" }} alt="MenuImg" src={MenuImg} />
                         <Typography fontFamily="Bebas Neue" variant="h5">

@@ -74,11 +74,9 @@ const NavMenu = withRouter((props) => {
 
   return (
     <Box
-      position="fixed"
-      zIndex={3}
+      pt={3}
       px={2}
       width="100%"
-      top={20}
       sx={{ display: { md: "none", xs: "flex" } }}
       flexDirection="row"
       justifyContent="space-between"

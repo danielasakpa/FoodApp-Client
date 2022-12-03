@@ -79,7 +79,7 @@ theme.typography.body1 = {
   paddingTop: "10px",
   color: "#fffee6",
   "@media (max-width:599px)": {
-    fontSize: "0.75rem",
+    fontSize: "0.8rem",
   },
   [theme.breakpoints.up("sm")]: {
     fontSize: "1.1rem",
@@ -93,14 +93,14 @@ const Hero = () => {
       <Box
         sx={{
           backgroundImage: `url(${SignupImg})`,
-          height: "90vh",
           backgroundRepeat: "no-repeat",
           backgroundColor: (t) =>
             t.palette.mode === "light"
               ? t.palette.grey[50]
               : t.palette.grey[900],
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "center center",
+          maxHeight: "700px"
         }}
         position="relative"
       >
@@ -110,12 +110,16 @@ const Hero = () => {
             direction="row"
             alignItems="end"
             justifyContent="space-between"
-            pb={3}
-            height="90vh"
+            height="64vh"
           >
             <ThemeProvider theme={theme}>
-              <Box marginTop={{ xs: 0, md: 2 }} className={classes.slidRight}>
-                <Navbar color="#fffee6" mb={10} moblieDisplay="none" fontFamily="Averia Serif Libre"/>
+              <Box marginTop={{ xs: 0, md: 2 }} mb={4} className={classes.slidRight}>
+                <Navbar
+                  color="#fffee6"
+                  mb={10}
+                  moblieDisplay="none"
+                  fontFamily="Averia Serif Libre"
+                />
                 <Typography
                   variant="h2"
                   fontFamily={{ xs: "Averia Serif Libre", lg: "Bebas Neue" }}
@@ -129,7 +133,9 @@ const Hero = () => {
                   Suspendisse varius enim in eros elementum tristique. Duis
                   cursus, mi quis viverra ornare, eros dolor interdum nulla.
                 </Typography>
-                <Link to={"/menu"} className={classes.orderBtn}><Button variant="contained">Discover Our Menu</Button></Link>
+                <Link to={"/menu"} className={classes.orderBtn}>
+                  <Button variant="contained">Discover Our Menu</Button>
+                </Link>
               </Box>
               <Box
                 textAlign="right"
