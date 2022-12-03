@@ -17,14 +17,12 @@ const Cart = () => {
     right: false,
   });
 
-  let productsCount = 0;
+  console.log(cart.items);
 
-  if(cart.items != []) {
-    const productsCount = cart.items.reduce(
-      (sum, product) => sum + product.quantity,
-      0
-    );
-  }
+  const productsCount = cart.items.reduce(
+    (sum, product) => sum + product.quantity,
+    0
+  );
 
   console.log(`productsCount: ${productsCount}`);
 
