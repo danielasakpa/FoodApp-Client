@@ -10,14 +10,15 @@ export const CartContext = createContext({
   getTotalCost: () => {},
 });
 
+var count;
+
 export function CartProvider({ children }) {
   const [cartProducts, setCartProducts] = useState([]);
-  let count = 0;
 
   // [ { id: 1 , quantity: 3 }, { id: 2, quantity: 1 } ]
 
   function getProductQuantity(id) {
-    const quantity = JSON.parse(sessionStorage.getItem("cart")).find(
+    const quantity = JSON.parse(localStorage.getItem("cart")).find(
       (product) => product.id === id
     )?.quantity;
 
@@ -30,6 +31,7 @@ export function CartProvider({ children }) {
 
   function addOneToCart(id) {
     const quantity = getProductQuantity(id);
+    count++;
 
     if (quantity === 0) {
       // product is not in cart
@@ -44,7 +46,7 @@ export function CartProvider({ children }) {
       // product is in cart
       // [ { id: 1 , quantity: 3 }, { id: 2, quantity: 1 } ]    add to product id of 2
       setCartProducts(
-        JSON.parse(sessionStorage.getItem("cart")).map(
+        JSON.parse(localStorage.getItem("cart")).map(
           (product) =>
             product.id === id // if condition
               ? { ...product, quantity: product.quantity + 1 } // if statement is true
@@ -52,17 +54,17 @@ export function CartProvider({ children }) {
         )
       );
     }
-    count++;
   }
 
   function removeOneFromCart(id) {
     const quantity = getProductQuantity(id);
+    count--;
 
     if (quantity === 1) {
       deleteFromCart(id);
     } else {
       setCartProducts(
-        JSON.parse(sessionStorage.getItem("cart")).map(
+        JSON.parse(localStorage.getItem("cart")).map(
           (product) =>
             product.id === id // if condition
               ? { ...product, quantity: product.quantity - 1 } // if statement is true
@@ -77,7 +79,7 @@ export function CartProvider({ children }) {
     // [product1, product2, product3]
     // [product1, product3]
     setCartProducts(() =>
-      JSON.parse(sessionStorage.getItem("cart")).filter((currentProduct) => {
+      JSON.parse(localStorage.getItem("cart")).filter((currentProduct) => {
         return currentProduct.id !== id;
       })
     );
@@ -93,10 +95,13 @@ export function CartProvider({ children }) {
     return totalCost;
   }
 
-    sessionStorage.setItem("cart", JSON.stringify(cartProducts));
+  if (cartProducts.length !== 0 || count === 0) {
+    console.log(count);
+    localStorage.setItem("cart", JSON.stringify(cartProducts));
+  }
 
   const contextValue = {
-    items: JSON.parse(sessionStorage.getItem("cart")),
+    items: JSON.parse(localStorage.getItem("cart")),
     getProductQuantity,
     addOneToCart,
     removeOneFromCart,
