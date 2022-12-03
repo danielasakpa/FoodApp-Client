@@ -1,1 +1,5 @@
-/* https://foodapp-backend-production.up.railway.app/:splat 200
+
+[[redirects]]
+  from = "/*"
+  to = "https://foodapp-backend-production.up.railway.app/:splat"
+  status = 200
