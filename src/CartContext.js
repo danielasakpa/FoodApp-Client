@@ -96,7 +96,6 @@ export function CartProvider({ children }) {
   }
 
   if (cartProducts.length !== 0 || count === 0) {
-    console.log(count);
     localStorage.setItem("cart", JSON.stringify(cartProducts));
   }
 
