@@ -93,9 +93,7 @@ export function CartProvider({ children }) {
     return totalCost;
   }
 
-  if (cartProducts.length !== 0 || count === 0) {
     sessionStorage.setItem("cart", JSON.stringify(cartProducts));
-  }
 
   const contextValue = {
     items: JSON.parse(sessionStorage.getItem("cart")),
