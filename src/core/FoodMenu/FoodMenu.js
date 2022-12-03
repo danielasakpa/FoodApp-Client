@@ -58,7 +58,7 @@ const FoodMenu = () => {
           you to relish.
         </Typography>
       </Box>
-      <Grid maxWidth="lg" m="0 auto" container spacing={{xs: 0, sm: 2}}>
+      <Grid maxWidth="xl" m="0 auto" container spacing={{xs: 0, sm: 3}}>
         {productsArray.map((products) => (
           <ProductCard products={products} />
         ))}

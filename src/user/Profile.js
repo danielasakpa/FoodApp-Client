@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
       transition: "all .2s ease-in-out",
       "&:hover": {
         transform: "scale(1.1)",
-      }
+      },
     },
   },
 }));
@@ -70,7 +70,7 @@ const Profile = withRouter(({ match, history }) => {
     return function cleanup() {
       abortController.abort();
     };
-  }, [match.params.userId]);
+  }, [match.params.userId, jwt.token]);
 
   if (redirectToSignin) {
     return <Redirect to="/signin" />;
@@ -78,7 +78,7 @@ const Profile = withRouter(({ match, history }) => {
   return (
     <>
       <Container maxWidth="xl">
-        <UserNav/>
+        <UserNav />
         <Box>
           <Stack
             marginTop={10}
@@ -86,7 +86,11 @@ const Profile = withRouter(({ match, history }) => {
             justifyContent="space-between"
             alignItems="center"
           >
-            <Typography variant="h3" fontFamily="pragmatica-extrabold" fontSize={{ xs: "25px", md: "40px" }}>
+            <Typography
+              variant="h3"
+              fontFamily="pragmatica-extrabold"
+              fontSize={{ xs: "25px", md: "40px" }}
+            >
               Welcome, {user.name}
             </Typography>
             <Stack
@@ -150,17 +154,19 @@ const Profile = withRouter(({ match, history }) => {
                   marginTop={6}
                   className={classes.Papers}
                 >
-                  <Paper p={3} elevation={3} square>
-                    <Box textAlign="center" m={2}>
-                      <img style={{ width: "50px" }} src={MenuImg} />
-                      <Typography fontFamily="Bebas Neue" variant="h5">
-                        Order Now
-                      </Typography>
-                    </Box>
+                  <Paper p={3} elevation={3} square>s
+                    <Link to={"/menu"} style={{textDecoration: "none"}}>
+                      <Box textAlign="center" cursor="pointer" m={2}>
+                        <img style={{ width: "50px" }} alt="MenuImg" src={MenuImg} />
+                        <Typography fontFamily="Bebas Neue" variant="h5">
+                          Order Now
+                        </Typography>
+                      </Box>
+                    </Link>
                   </Paper>
                   <Paper p={3} elevation={3} square>
                     <Box textAlign="center" m={2}>
-                      <img style={{ width: "50px" }} src={OrderImg} />
+                      <img style={{ width: "50px" }} alt="OrderImg" src={OrderImg} />
                       <Typography fontFamily="Bebas Neue" variant="h5">
                         Order History
                       </Typography>
@@ -175,7 +181,7 @@ const Profile = withRouter(({ match, history }) => {
                     square
                   >
                     <Box textAlign="center" m={2}>
-                      <img style={{ width: "50px" }} src={LogoutImg} />
+                      <img style={{ width: "50px" }} alt="LogoutImg" src={LogoutImg} />
                       <Typography fontFamily="Bebas Neue" variant="h5">
                         Logout
                       </Typography>

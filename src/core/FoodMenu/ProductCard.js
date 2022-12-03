@@ -4,7 +4,6 @@ import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import Meal from "../../Assets/images/Meals.jpg";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -32,12 +31,16 @@ const ProductCard = ({ products }) => {
           sx={{
             // 16:9
             pt: "56.25%",
+            overflow: "hidden",
+            cursor: "pointer"
           }}
-          image={Meal}
-          alt="random"
+          height="340"
+          image={products.img}
+          className="img-hover-zoom"
+          alt="Foods"
         />
         <CardContent sx={{ flexGrow: 1 }}>
-          <Stack direction="row" justifyContent="space-between">
+          <Stack direction="row" justifyContent="space-between" mt={2}>
             <Typography gutterBottom variant="h5" component="h2">
               {products.title}
             </Typography>
