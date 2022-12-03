@@ -39,7 +39,7 @@ const CartProduct = (props) => {
             </Button>
           </div>
         </div>
-        <img src={Meal} alt={productData.title} />
+        <img src={productData.img} alt={productData.title} />
       </Wrapper>
       <Button
         size="sm"
