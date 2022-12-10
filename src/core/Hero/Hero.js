@@ -100,8 +100,8 @@ const Hero = () => {
               : t.palette.grey[900],
           backgroundSize: "cover",
           backgroundPosition: "center center",
-          maxHeight: "700px"
         }}
+        height={{xs: "700px", md: "90vh"}}
         position="relative"
       >
         <NavMenu />
@@ -110,7 +110,7 @@ const Hero = () => {
             direction="row"
             alignItems="end"
             justifyContent="space-between"
-            height="64vh"
+            height={{xs: "64vh", md: "90vh"}}
           >
             <ThemeProvider theme={theme}>
               <Box marginTop={{ xs: 0, md: 2 }} mb={4} className={classes.slidRight}>
