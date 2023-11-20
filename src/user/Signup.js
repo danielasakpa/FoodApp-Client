@@ -88,6 +88,7 @@ const SignUp = () => {
       email: values.email || undefined,
       password: values.password || undefined,
     };
+    
     create(user).then((data) => {
       if (data.error) {
         setValues({ ...values, error: data.error, isLoading: false });

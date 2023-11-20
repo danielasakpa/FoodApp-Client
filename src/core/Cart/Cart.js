@@ -4,7 +4,7 @@ import Drawer from "@mui/material/Drawer";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Button from "@mui/material/Button";
 import Badge from "@mui/material/Badge";
-import { CartContext } from "../../CartContext";
+import { CartContext } from "../../context/CartContext";
 import { Typography } from "@mui/material";
 import CartProduct from "../CartProduct/CartProduct";
 import { Stack } from "@mui/system";

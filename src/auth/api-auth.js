@@ -1,6 +1,8 @@
+const serverUrl = process.env.REACT_APP_SERVER_URL;
+
 const signin = async (user) => {
   try {
-    let response = await fetch("/auth/signin/", {
+    let response = await fetch(`${serverUrl}/auth/signin/`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -18,7 +20,7 @@ const signin = async (user) => {
 const signout = async () => {
   try {
     sessionStorage.clear("user")
-    let response = await fetch("/auth/signout/", { method: "GET" });
+    let response = await fetch(`${serverUrl}/auth/signout/`, { method: "GET" });
     return await response.json();
   } catch (err) {
     console.log(err);

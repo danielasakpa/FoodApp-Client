@@ -1,5 +1,5 @@
 
 [[redirects]]
   from = "/*"
-  to = "https://foodapp-backend-production.up.railway.app/:splat"
+  to = "https://food-backend-server.onrender.com/:splat"
   status = 200

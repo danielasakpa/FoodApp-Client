@@ -4,7 +4,7 @@ import MainRouter from "./MainRouter";
 import { HashRouter } from "react-router-dom";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import theme from "./theme";
-import CartProvider from "./CartContext";
+import CartProvider from "./context/CartContext";
 
 const App = () => {
   return (

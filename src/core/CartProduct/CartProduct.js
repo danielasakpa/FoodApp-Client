@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Button } from "@mui/material";
 import { Wrapper } from "./CartProductStyle";
-import { CartContext } from "../../CartContext";
+import { CartContext } from "../../context/CartContext";
 import { getProductData } from "../../productsStore";
 
 const CartProduct = (props) => {
